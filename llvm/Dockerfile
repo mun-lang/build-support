@@ -44,4 +44,4 @@ RUN ln -s $LIBS_PREFIX/bin/llvm-strip $LIBS_PREFIX/bin/strip
 RUN ln -s $LIBS_PREFIX/bin/ld.lld $LIBS_PREFIX/bin/ld
 
 # Create an archive of the installed binaries
-RUN tar -vcJf /llvm-$LLVM_VERSION-ubuntu-bionic.tar.xz /opt/libs/
+RUN tar --xform s:'^./':: -C /opt/libs/ -vcJf /llvm-$LLVM_VERSION-ubuntu-12.04-bionic.tar.xz ./

@@ -5,5 +5,5 @@ docker build --build-arg LLVM_VERSION=$llvm_version -t ubuntu-llvm:$llvm_version
 
 # Spin up the image and copy the tarbal it creates
 id=$(docker create ubuntu-llvm:$llvm_version)
-docker cp $id:llvm-$llvm_version-ubuntu-bionic.tar.xz llvm-$llvm_version-ubuntu-bionic.tar.xz
+docker cp $id:llvm-$llvm_version-ubuntu-12.04-bionic.tar.xz llvm-$llvm_version-ubuntu-12.04-bionic.tar.xz
 docker rm -v $id
